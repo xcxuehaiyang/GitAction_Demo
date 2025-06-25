@@ -23,3 +23,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+  
+  build_on_windows:
+    runs-on: windows-latest
+    steps:
+      - name: run multi-line cmd
+        run: |
+         echo "hello github acitons "
+         Get-date
+      
