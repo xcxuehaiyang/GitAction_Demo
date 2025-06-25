@@ -23,9 +23,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          date1
   
   build_on_windows:
     runs-on: windows-latest
+    if: ${{ sucess()}}
+    needs: [build_on_linux]
     steps:
       - name: run multi-line cmd
         run: |
