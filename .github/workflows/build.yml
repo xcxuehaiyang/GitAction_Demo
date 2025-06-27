@@ -2,7 +2,7 @@ name: Build
 on: workflow_dispatch
 jobs:
   build and compile:
-    runs-on: ubuntu:22.04
+    runs-on: ubuntu-latest
     steps:
       - name: git clone code
         run: git clone https://github.com/xcxuehaiyang/GitAction_Demo.git
