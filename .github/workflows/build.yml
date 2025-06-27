@@ -1,0 +1,14 @@
+name:Build
+on:workflow-dispatch
+jobs:
+  build and compile:
+  runs-on:ubuntu:22.04
+  steps:
+    -name: git clone code
+     run: git clone https://github.com/xcxuehaiyang/GitAction_Demo.git
+    -name: show codes
+     run: ls -a
+    -name: build
+     run: gcc main.c -o hello
+    -name: run
+     run: ./hello
