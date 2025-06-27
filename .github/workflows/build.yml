@@ -1,5 +1,5 @@
-name:Build
-on:workflow-dispatch
+name: Build
+on: workflow-dispatch
 jobs:
   build and compile:
     runs-on: ubuntu:22.04
