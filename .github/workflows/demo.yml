@@ -25,7 +25,9 @@ jobs:
 
       # 4. 编译程序
       - name: Compile C program
-        run: gcc main.c -o hello
+        run: |
+          cd GitAction_Demo
+          gcc main.c -o hello
 
       # 5. 添加执行权限（可选但推荐）
       - name: Make executable
