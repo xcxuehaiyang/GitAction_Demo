@@ -1,14 +1,35 @@
-name: Build
+name: Build and Run C Program
+
 on: workflow_dispatch
+
 jobs:
   build_on_linux:
     runs-on: ubuntu-latest
     steps:
-      - name: git clone code
-        run: git clone git@github.com:xcxuehaiyang/GitAction_Demo.git
-      - name: show codes
-        run: ls -a
-      - name: build
+      # 1. 正确检出代码（使用官方 checkout 动作）
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          repository: xcxuehaiyang/GitAction_Demo
+          # 如果是私有仓库需要添加访问令牌
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2. 安装编译依赖
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+
+      # 3. 显示文件结构（调试用）
+      - name: Show directory structure
+        run: ls -la
+
+      # 4. 编译程序
+      - name: Compile C program
         run: gcc main.c -o hello
-      - name: run
+
+      # 5. 添加执行权限（可选但推荐）
+      - name: Make executable
+        run: chmod +x hello
+
+      # 6. 运行程序
+      - name: Run program
         run: ./hello
