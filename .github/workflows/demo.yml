@@ -18,7 +18,10 @@ jobs:
 
       # 3. 显示文件结构（调试用）
       - name: Show directory structure
-        run: ls -la
+        run: |
+          ls -la
+          cd GitAction_Demo
+          ls -la
 
       # 4. 编译程序
       - name: Compile C program
