@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: git clone code
-        run: git clone https://github.com/xcxuehaiyang/GitAction_Demo.git
+        run: git clone git@github.com:xcxuehaiyang/GitAction_Demo.git
       - name: show codes
         run: ls -a
       - name: build
