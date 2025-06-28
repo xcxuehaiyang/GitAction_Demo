@@ -8,7 +8,9 @@ jobs:
     steps:
       # 1. 正确检出代码（使用官方 checkout 动作）
       - name: Checkout repository
-        run: git clone https://github.com/xcxuehaiyang/GitAction_Demo.git
+        run: |
+          git clone https://github.com/xcxuehaiyang/GitAction_Demo.git
+          cd GitAction_Demo
 
       # 2. 安装编译依赖
       - name: Install build tools
