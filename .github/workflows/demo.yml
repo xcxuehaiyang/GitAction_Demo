@@ -4,15 +4,8 @@ jobs:
   build_on_linux:
     runs-on: ubuntu-latest
     steps:
-      - name: Add SSH Key
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          repository: owner/private-repo
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: git clone code
+        run: git clone git@github.com:xcxuehaiyang/GitAction_Demo.git
       - name: show codes
         run: ls -a
       - name: build
