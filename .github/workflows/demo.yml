@@ -31,8 +31,12 @@ jobs:
 
       # 5. 添加执行权限（可选但推荐）
       - name: Make executable
-        run: chmod +x hello
+        run: |
+          cd GitAction_Demo
+          chmod +x hello
 
       # 6. 运行程序
       - name: Run program
-        run: ./hello
+        run: 
+          cd GitAction_Demo
+          ./hello
