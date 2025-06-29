@@ -32,7 +32,7 @@ jobs:
       # 5. 添加执行权限（可选但推荐）
       - name: Make executable
         run: |
-          cd GitAction_Demo
+          cd GitAction_Demo &&
           chmod +x hello
 
       # 6. 运行程序
