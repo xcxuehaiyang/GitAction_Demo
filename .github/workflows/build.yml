@@ -1,14 +1,15 @@
 name: Build
+
 on: workflow_dispatch
+
 jobs:
   build_on_linux:
     runs-on: ubuntu-latest
     steps:
-      - name: git clone code
-        run: git clone https://github.com/xcxuehaiyang/GitAction_Demo.git
-      - name: show codes
+      - name: check out
+        uses: actions/checkout@v4
+        with: 
+          repository: xcxuehaiyang/GitAction_Demo
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: show directory
         run: ls -a
-      - name: build
-        run: gcc main.c -o hello
-      - name: run
-        run: ./hello
