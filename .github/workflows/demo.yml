@@ -38,5 +38,5 @@ jobs:
       # 6. 运行程序
       - name: Run program
         run: 
-          cd GitAction_Demo
+          cd GitAction_Demo &&
           ./hello
